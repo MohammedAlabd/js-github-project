@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded',function (){
 
     submit.addEventListener("click",function(e){
         e.preventDefault()
+        nameUl.innerHTML = ""
         let url = `https://api.github.com/search/users?q=${search.value}`
         fetch(url).then(e=>e.json()).then(obj => obj.items.forEach(element => renderUsers(element)))
     })
